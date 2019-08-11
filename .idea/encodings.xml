@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/proxy/src/main/java/dynamicproxy/cglib/CglibProxy.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/proxy/src/main/java/dynamicproxy/jdk/JdkProxy.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-async" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-mybatic-plus-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-jpa" charset="UTF-8" />
+  </component>
+</project>

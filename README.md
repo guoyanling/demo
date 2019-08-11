@@ -5,3 +5,4 @@
 3. springboot and jpa demo
 4. thread pool demo (3)
 5. spring-async
+5. proxy demo (dynamic proxy)
