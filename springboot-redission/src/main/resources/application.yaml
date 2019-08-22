@@ -4,6 +4,6 @@ spring:
     host: 127.0.0.1
     port: 21879
     password: root
-    timeout: 20s
-    redission:
-      config: "classpath:redisson.yaml"
+    timeout: 120s
+    redisson:
+      config: classpath:redisson.yaml
