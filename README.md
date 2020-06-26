@@ -7,4 +7,6 @@
 5. spring-async
 6. proxy demo (dynamic proxy)
 7. spring-boot multi maven demo
-7. springcache + redis demo 
+8. springcache + redis demo 
+9. DistributedLock + redis demo 
+

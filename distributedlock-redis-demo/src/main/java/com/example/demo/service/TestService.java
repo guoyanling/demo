@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class TestService {
 
-    @DistributedLock(lockKey ="#{id}")
+    @DistributedLock(lockKey ="#{id}",tip = "正在获取中...")
     public String getMsg(String id) {
         try {
-            // 模拟业务运行 1s
-            Thread.sleep(1000);
+            // 模拟业务运行 0.5s
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
