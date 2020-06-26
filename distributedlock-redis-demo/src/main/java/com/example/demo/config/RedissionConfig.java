@@ -1,6 +1,5 @@
 package com.example.demo.config;
 
-import com.example.demo.utils.RedissionUtil;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
@@ -17,11 +16,6 @@ public class RedissionConfig {
     private String port;
     @Value("${spring.redis.password}")
     private String password;
-
-    @Bean
-    public RedissionUtil redissionUtil() {
-        return new RedissionUtil(getRedisson());
-    }
 
     @Bean
     public RedissonClient getRedisson() {

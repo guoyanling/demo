@@ -1,13 +1,13 @@
 package com.example.demo.aop;
 
 
-import com.example.demo.utils.RedissionUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class DistributedLockAop {
 
     @Autowired
-    private RedissionUtil redissionUtil;
+    private RedissonClient redissonClient;
 
     @Around("@annotation(com.example.demo.aop.DistributedLock)")
     public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
@@ -33,7 +33,7 @@ public class DistributedLockAop {
 
         // 可自定义规则
         lockKey= "LOCK:"+method.getName()+":"+lockKey;
-        RLock lock = redissionUtil.getRLock(lockKey);
+        RLock lock = redissonClient.getLock(lockKey);
         boolean locked = false;
         try {
             locked = getLock(lock, lockKey);
