@@ -13,6 +13,4 @@ public @interface DistributedLock {
 
     String lockKey() default "NONE";
     String tip() default "正在操作中";
-
-
 }

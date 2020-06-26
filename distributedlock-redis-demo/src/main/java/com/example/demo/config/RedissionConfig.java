@@ -24,7 +24,6 @@ public class RedissionConfig {
         config.useSingleServer().setAddress("redis://" + host + ":" + port).setPassword(password);
         //添加主从配置
         //        config.useMasterSlaveServers().setMasterAddress("").setPassword("").addSlaveAddress(new String[]{"",""});
-
         return Redisson.create(config);
     }
 
